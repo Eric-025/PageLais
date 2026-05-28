@@ -307,11 +307,16 @@ nav ul li:last-child {
   font-family: 'Poppins', sans-serif;
   background: rgba(128, 128, 128, 0.152);
 }
-
+#section #experiencia header {
+  width: 100%;
+  text-align: center;
+}
 #section #experiencia header .tituloexperiencia {
   color: rgb(188, 103, 103);
   font-family: 'Poppins', sans-serif;
   margin: 30px auto;
+  text-align: center; /* Garante que o texto fique no meio */
+  width: 100%; /* Garante que ele ocupe todo o espaço disponível para poder centralizar */
 }
 
 #section #experiencia .containerexperiencia {
