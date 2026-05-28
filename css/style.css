@@ -592,86 +592,61 @@ details p {
    13. RESPONSIVIDADE (MEDIA QUERIES)
 ========================================= */
 
-/* --- MOBILE (Até 767px) --- */
+/* --- MOBILE (Celulares em pé - Até 767px) --- */
 @media (max-width: 767px) {
   nav {
     padding: 10px 20px;
     flex-direction: column;
-    align-items: flex-start; /* Mantém o nome na esquerda */
+    align-items: flex-start; 
   }
-
   .menu-toggle {
-    display: flex; /* Exibe o ícone hambúrguer */
+    display: flex; 
     position: absolute;
     top: 15px;
     right: 20px;
   }
-
   .ul {
-    display: none; /* Esconde o menu por padrão */
+    display: none; 
     width: 100%;
     flex-direction: column;
     margin-top: 20px;
   }
-
-  .ul.ativo {
-    display: flex; /* Mostra quando o JavaScript adicionar a classe */
-  }
-
+  .ul.ativo { display: flex; }
   ul li {
     float: none;
     width: 100%;
     text-align: center;
   }
 
-  #section .inicio {
+  /* Seção Início e Sobre: Empilhadas */
+  #section .inicio, #section #sobre {
     flex-direction: column;
     align-items: center;
   }
-
-  #section .inicio .texto1,
-  #section .inicio .foto1 {
+  #section .inicio .texto1, #section .inicio .foto1,
+  #section #sobre .texto2, #section #sobre .foto2 {
     width: 90%;
   }
-
-  #section .inicio .foto1 {
-    height: 300px;
+  #section .inicio .foto1 { height: 300px; }
+  
+  /* Mantém o rosto da Laís visível na foto 2 */
+  #section #sobre .foto2 { 
+    height: 300px; 
+    background-position: center top; 
   }
+  
+  .subtexto1 { margin-top: 40px; }
+  #section #atuacao ul li { margin: 10px 20px; }
+  .questao { width: 90%; }
 
-  .subtexto1 {
-    margin-top: 40px;
-  }
-
-  #section #atuacao ul li {
-    margin: 10px 20px;
-  }
-
-  .questao {
-    width: 90%;
-  }
-
-  #section #sobre {
-    flex-direction: column;
-    width: 100%;
-  }
-
- #section #sobre .foto2 {
-    height: 300px;
-    background-position: center top; /* Garante que o rosto no topo nunca seja cortado */
-  }
-
-  #section #experiencia {
-    margin: 20px auto; 
-    padding: 15px;
-  }
-
+  /* Experiência: 1 Card por linha */
+  #section #experiencia { margin: 20px auto; padding: 15px; }
   #section #experiencia .containerexperiencia {
     flex-direction: column; 
     align-items: center;
     margin: 40px auto; 
     gap: 25px; 
   }
-
   .experiencia1, .experiencia2, .experiencia3, .experiencia4 {
     width: 100%; 
     max-width: 320px; 
@@ -680,48 +655,41 @@ details p {
     margin-bottom: 0; 
   }
 
-  #section #abordagem {
-    padding: 50px 15px;
-  }
-  
-  .container-abordagem {
-    padding: 30px 20px;
-  }
-
+  /* Abordagem e Contato */
+  #section #abordagem { padding: 50px 15px; }
+  .container-abordagem { padding: 30px 20px; }
   .botoes-contato {
     flex-direction: column; 
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
   }
-
   .btn-principal, .btn-secundario {
     text-align: center;
     width: 100%;
   }
 }
 
-/* --- TABLET (De 768px até 1023px) --- */
+/* --- TABLET (iPads e Modo Computador no Celular - 768px a 1023px) --- */
 @media (min-width: 768px) and (max-width: 1023px) {
-  nav {
-    padding: 0 40px;
+  /* Menu um pouco menor para caber tudo */
+  nav { padding: 0 20px; }
+  .nav .nome { font-size: 18px; }
+  ul li { padding: 15px 8px; font-size: 14px; }
+
+  /* Início e Sobre: Lado a Lado (Proporção ajustada) */
+  #section .inicio, #section #sobre {
+    flex-direction: row; /* Força ficar lado a lado */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: auto; /* Remove aquele buraco branco gigante */
+    padding: 80px 20px;
   }
-  #section .inicio {
-    flex-direction: column;
-  }
-  #section .inicio .texto1,
-  #section .inicio .foto1 {
-    width: 80%;
-  }
-  #section .inicio .foto1 {
-    height: 400px;
-  }
-  #section #sobre {
-    flex-direction: column;
-  }
-  #section #sobre .foto2 {
-    height: 400px;
-  }
+  #section .inicio .texto1, #section #sobre .texto2 { width: 55%; margin-top: 0; }
+  #section .inicio .foto1, #section #sobre .foto2 { width: 40%; height: 400px; margin-top: 0; }
+
+  /* Experiência: Grid 2x2 */
   #section #experiencia .containerexperiencia {
     flex-wrap: wrap; 
     justify-content: center; 
@@ -737,9 +705,7 @@ details p {
   }
 }
 
-/* --- DESKTOP GRANDE (1400px em diante) --- */
+/* --- DESKTOP GRANDE (Monitores largos - 1400px em diante) --- */
 @media (min-width: 1400px) {
-  #section .inicio {
-    gap: 80px;
-  }
+  #section .inicio { gap: 80px; }
 }
