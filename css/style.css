@@ -153,7 +153,8 @@ nav ul li:last-child {
   max-width: 100%;
   height: 500px;
   background: white;
-  background-image: url(/img/DSC_3112.jpg);
+  /* CORREÇÃO AQUI: Adicionado os dois pontos ../ */
+  background-image: url("../img/DSC_3112.jpg");
   background-size: cover;
   box-shadow: 5px 5px 10px gray;
   z-index: 1;
@@ -573,11 +574,13 @@ details p {
    12. ANIMAÇÕES
 ========================================= */
 @keyframes trocarImagem {
-  0% { background-image: url("/img/DSC_3316.jpg"); }
-  33% { background-image: url("/img/DSC_3213.jpg"); }
-  66% { background-image: url("/img/DSC_3257.jpg"); }
-  100% { background-image: url("/img/DSC_3389.jpg"); }
+  /* CORREÇÃO AQUI: Adicionado os dois pontos ../ em todas as imagens */
+  0% { background-image: url("../img/DSC_3316.jpg"); }
+  33% { background-image: url("../img/DSC_3213.jpg"); }
+  66% { background-image: url("../img/DSC_3257.jpg"); }
+  100% { background-image: url("../img/DSC_3389.jpg"); }
 }
+
 /* =========================================
    13. RESPONSIVIDADE (MEDIA QUERIES)
 ========================================= */
